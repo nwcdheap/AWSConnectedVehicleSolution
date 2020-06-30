@@ -1,0 +1,31 @@
+{
+    "name": "lambda-generatejwttoken",
+    "description": "A Lambda generate  JWT token",
+    "main": "index.js",
+    "author": {
+        "name": "aws-solutions-builder"
+    },
+    "version": "0.0.1",
+    "private": "true",
+    "dependencies": {
+        "jsonwebtoken": "^8.5.1"
+    },
+    "devDependencies": {
+        "npm-run-all": "*",
+        "jsonwebtoken": "^8.5.1"
+    },
+    "scripts": {
+        "pretest": "npm install",
+        "test": "env VEHICLE_ANOMALY_TBL='anomalytable' NOTIFICATION_SERVICE='notifyservice' mocha lib/*.spec.js",
+        "build-init": "rm -rf dist && rm -f archive.zip && mkdir dist && mkdir dist/lib",
+        "build:copy": "cp index.js dist/",
+        "build:install": "cp package.json dist/ && cd dist && npm install --production",
+        "build": "npm-run-all -s build-init build:copy build:install",
+        "zip": "cd dist && zip -rq lambda-generatejwttoken.zip ."
+    },
+    "bundledDependencies": [
+        "moment",
+        "shortid",
+        "underscore"
+    ]
+}

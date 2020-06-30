@@ -1,0 +1,7 @@
+^dist/
+CODE_OF_CONDUCT.md:4
+CONTRIBUTING.md:50
+source/services/anomaly/lib/anomaly.spec.js
+^deployment/aws-connected-vehicle-solution-dev-cn.yaml
+^source/
+^deployment/
